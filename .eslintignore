@@ -1,0 +1,10 @@
+
+# configs 
+vite.config.ts
+tsconfig.json
+tsconfig.node.json
+
+# dir
+node_modules
+dist
+build
