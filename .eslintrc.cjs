@@ -26,6 +26,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'prettier/prettier': ['error'],
     '@typescript-eslint/no-unused-vars': 'warn',
+    'import/prefer-default-export': 'off',
   },
   settings: {
     'import/resolver': {
