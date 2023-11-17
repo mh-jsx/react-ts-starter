@@ -37,7 +37,8 @@ const initAuthContextPropsState = {
 
 const AuthContext = createContext<AuthContextProps>(initAuthContextPropsState);
 
-const useAuth = () => {
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuth = () => {
   return useContext(AuthContext);
 };
 
@@ -103,4 +104,4 @@ function AuthInit({ children }: IProps) {
   return showSplashScreen ? <div>Loading...</div> : children;
 }
 
-export { AuthProvider, useAuth, AuthInit };
+export { AuthProvider, AuthInit };

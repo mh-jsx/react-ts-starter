@@ -14,4 +14,4 @@ function Logout() {
   return <Navigate to='/auth/sign-in' />;
 }
 
-export default Logout;
+export { Logout };
