@@ -36,6 +36,10 @@ module.exports = {
       },
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/'],
+        alias: {
+          src: './src',
+        },
       },
       alias: {
         src: './src',
