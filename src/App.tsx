@@ -1,20 +1,25 @@
-import Util from 'util/util';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 
-import Test from 'components/Test';
+import { AuthInit, AuthProvider } from 'auth/core/auth-context';
+import { setupAxios } from 'auth/core/auth-helpers';
+import rqConfigs from 'configs/rq-configs';
 
-import ReactSvg from 'assets/react.svg?react';
+import Router from 'routes/router';
 
-import './App.css';
+setupAxios();
+const queryClient = new QueryClient(rqConfigs);
 
 function App() {
-  const a = (x: any) => x;
-
   return (
-    <>
-      Hello
-      <ReactSvg />
-      <Test asd='' />
-    </>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <AuthInit>
+          <Router />
+        </AuthInit>
+      </AuthProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 
